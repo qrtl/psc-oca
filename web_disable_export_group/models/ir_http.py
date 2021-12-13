@@ -6,13 +6,17 @@ from odoo.http import request
 
 
 class Http(models.AbstractModel):
-    _inherit = 'ir.http'
+    _inherit = "ir.http"
 
     def session_info(self):
-        res = super(Http, self).session_info()
+        res = super().session_info()
         user = request.env.user
-        res.update({
-            'group_export_data': user and user.has_group(
-                'web_disable_export_group.group_export_data'),
-        })
+        res.update(
+            {
+                "group_export_data": user
+                and user.has_group("web_disable_export_group.group_export_data"),
+                "group_xlsx_export_data": user
+                and user.has_group("web_disable_export_group.group_export_xlsx_data"),
+            }
+        )
         return res
