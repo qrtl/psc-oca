@@ -57,7 +57,7 @@ msgstr ""
 #: code:addons/partner_ref_unique/models/res_partner.py:0
 #, python-format
 msgid "This reference is equal to partner '%s'"
-msgstr ""
+msgstr "'%s'と重複しています。(もう一度[保存]を押してください。) "
 
 #. module: partner_ref_unique
 #: model:ir.model.fields,field_description:partner_ref_unique.field_res_company__partner_ref_unique
