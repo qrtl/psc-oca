@@ -54,7 +54,6 @@ class ReportCSVAbstract(models.AbstractModel):
         if error_handling:
             return file_data.read().encode(encoding, errors=error_handling), "csv"
         try:
-            logging.info("Encdonig__________")
             return file_data.read().encode(encoding), "csv"
         except Exception:
             raise UserError(
